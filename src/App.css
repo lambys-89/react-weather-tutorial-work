@@ -1,0 +1,51 @@
+.App {
+    text-align: center;
+  }  
+  
+  .App-header, .App-footer {
+    background-color: #105160;
+    color: white;
+  }
+  
+  .App-header {
+    min-height: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+  
+  .App-main {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+  
+  
+  #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    filter: grayscale(100%);
+    opacity: 60%;
+  }
+  
+  .App-footer {
+    min-height: 5vh;
+    font-size: 10px;
+    margin: 0;
+    padding-top: 1vh;
+  }
+  
+  .App-header.h1 {
+    font-size: 4rem;
+  }
