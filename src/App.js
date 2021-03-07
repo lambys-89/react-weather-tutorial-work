@@ -59,7 +59,7 @@ function App() {
         </p>
       </footer>
     </div>
-  )
+  );
 
 }
 
