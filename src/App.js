@@ -4,7 +4,6 @@ import {Form, Button, Row, Col} from 'react-bootstrap';
 import background from "./media/01d-vid.mp4";
 import './App.css';
 import WeatherDetails from "./WeatherDetails.js";
-import FutureForecast from "./FutureForecast.js";
 
 function App() {
 
@@ -54,7 +53,6 @@ function App() {
       </Row>
   </Form>}
       {readyToDisplay===true && <WeatherDetails userInput={defaultCity} type={searchType} />}
-      {readyToDisplay===true && <FutureForecast userInput={defaultCity} type={searchType}/>}
       </main>
       <footer className="App-footer">
         <p className="open-source-code">

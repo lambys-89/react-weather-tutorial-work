@@ -3,6 +3,7 @@ import {Form, Button, Row, Col} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import InfoApi from "./InfoApi.js";
 import axios from "axios";
+import FutureForecast from "./FutureForecast.js";
 
 
 export default function WeatherDetails(props) {
@@ -14,6 +15,7 @@ export default function WeatherDetails(props) {
     
     function handleResponse(response) {        
        
+        console.log(response);
         setWeatherData(
             {
                 ready: true,
@@ -42,12 +44,11 @@ export default function WeatherDetails(props) {
     }
 
     function search() {
-        console.log("search has been called");
-        const apiKey = "d4005dcd287a291e84d25dc6afec0b1c";
+        const apiKey = "0cdc6d259e17cc7da434cf6b9a723f37";
+        
         let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
         axios.get(apiUrl).then(handleResponse); 
-    }
+        }
 
     if(weatherData.ready) {
 
@@ -63,11 +64,12 @@ export default function WeatherDetails(props) {
                       onChange={handleChange}
                     />
                     <Button type="submit" className="mb-2" id="forecast-search-but" onClick={handleClick} >Submit</Button>
-                    <Button type="submit" className="mb-2" id="forecast-location-but" >📌</Button>
+{/*                    <Button type="submit" className="mb-2" id="forecast-location-but" >📌</Button>*/}
                 </Col>
             </Row>
         </Form>
         <InfoApi data={weatherData} />
+        <FutureForecast city={weatherData.cityName}/>
         </div>
     );
 
