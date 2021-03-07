@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function FormattedDate(props) {
 
-    
+    // eslint-disable-next-line
     Date.prototype.addSecs = function(s) {
         this.setTime(this.getTime() + (s * 1000));
         return this;
