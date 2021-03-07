@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form, Button, Row, Col} from 'react-bootstrap';
+import {Form, Button, Row} from 'react-bootstrap';
 import background from "./media/01d-vid.mp4";
 import './App.css';
 import WeatherDetails from "./WeatherDetails.js";

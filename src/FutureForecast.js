@@ -1,11 +1,9 @@
 import React, {useState} from "react";
-import {Row, Col} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import ForecastDetails from "./ForecastDetails.js";
-import WeatherIcon from "./WeatherIcon.js";
-import Temperature from "./Temperature.js";
 
 
 export default function FutureForecast(props) {
@@ -20,7 +18,6 @@ export default function FutureForecast(props) {
     }
 
     function handleFutureResponse(response) {
-        console.log(response);
         setForecastData(response.data);
         setLoaded(true);
     }

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Form, Button, Row, Col} from 'react-bootstrap';
+import {Form, Button} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import InfoApi from "./InfoApi.js";
 import axios from "axios";
@@ -15,7 +15,6 @@ export default function WeatherDetails(props) {
     
     function handleResponse(response) {        
        
-        console.log(response);
         setWeatherData(
             {
                 ready: true,
