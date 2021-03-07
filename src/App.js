@@ -8,13 +8,11 @@ import WeatherDetails from "./WeatherDetails.js";
 function App() {
 
   let [readyToDisplay, setReadyToDisplay] = useState(false);
-  let [searchType, setSearchType] = useState("start");
   let [defaultCity, setDefaultCity] = useState("");
   
   
  function cityWeatherForecast(event) {
     event.preventDefault();
-    setSearchType("city-forecast-view");
     setReadyToDisplay(true);
   }
 
@@ -38,21 +36,19 @@ function App() {
         src={background}
       />
       {readyToDisplay===false && 
-      <Form>
-      <Row className="forecast-header">
-          <Col xs={12} sm={12} className="forecast-header-search">
-              <Form.Control
-                className="input"
-                id="forecast-searchbox"
-                placeholder="Enter City..."
-                onChange={cityCapture}
-              />
-              <Button type="submit" className="mb-2" id="forecast-search-but" onClick={cityWeatherForecast} >Submit</Button>
-              <Button type="submit" className="mb-2" id="forecast-location-but" >📌</Button>
-          </Col>
-      </Row>
-  </Form>}
-      {readyToDisplay===true && <WeatherDetails userInput={defaultCity} type={searchType} />}
+      <Form className="entry-form"> 
+        <Row>
+        <Form.Control
+          className="city-input"
+          placeholder="Enter City..."
+          onChange={cityCapture}
+        />
+        </Row>
+        <Row className="entry-search-but">
+        <Button type="submit" className="mb-2 search-button" id="forecast-search-but" onClick={cityWeatherForecast} >Search</Button>
+        </Row>
+      </Form>}
+      {readyToDisplay===true && <WeatherDetails userInput={defaultCity} />}
       </main>
       <footer className="App-footer">
         <p className="open-source-code">

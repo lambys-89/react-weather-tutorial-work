@@ -53,22 +53,19 @@ export default function WeatherDetails(props) {
     if(weatherData.ready) {
 
     return (
-        <div>
-        <Form>
-            <Row className="forecast-header">
-                <Col xs={12} sm={10} className="forecast-header-search">
+        <div className="main-page">
+        <Form className="form-main">
+            
                     <Form.Control
                       className="input"
-                      id="forecast-searchbox"
+                      id="forecast-searchbox-main"
                       placeholder="Enter City..."
                       onChange={handleChange}
                     />
-                    <Button type="submit" className="mb-2" id="forecast-search-but" onClick={handleClick} >Submit</Button>
-{/*                    <Button type="submit" className="mb-2" id="forecast-location-but" >📌</Button>*/}
-                </Col>
-            </Row>
+                    <Button type="submit" className="mb-2" id="forecast-search-but" onClick={handleClick} >Search</Button>
         </Form>
         <InfoApi data={weatherData} />
+        <h2>Forecast Details</h2>
         <FutureForecast city={weatherData.cityName}/>
         </div>
     );

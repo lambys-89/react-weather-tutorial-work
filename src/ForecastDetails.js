@@ -5,15 +5,11 @@ import {Row, Col} from 'react-bootstrap';
 export default function ForecastDetails(props) {
 
 return(
-    <div>
-        <Row>
-            <Col xs={6} sm={3} >
-                {new Date(props.data.dt * 1000).getHours()}:00
+            <div xs={12} sm={3} className="weather-forecast-sections col">
+                <h2 className="forecast">{new Date(props.data.dt * 1000).getHours()}:00</h2>
                 <WeatherIcon iconCode = {props.data.weather[0].icon} />
-                {Math.round(props.data.main.temp_min)}°C/{Math.round(props.data.main.temp_max)}°C
-            </Col>
-        </Row>
-    </div>
+                <h2 className="forecast">{Math.round(props.data.main.temp_min)}°C/{Math.round(props.data.main.temp_max)}°C</h2>
+            </div>
 );
 
 }
